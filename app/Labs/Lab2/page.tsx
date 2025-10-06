@@ -1,4 +1,5 @@
 import "./index.css";
+import { Container } from "react-bootstrap";
 import ForegroundColors from "./ForegroundColors";
 import BackgroundColors from "./BackgroundColors";
 import Borders from "./Borders";
@@ -15,7 +16,7 @@ import ReactIconsSampler from "./ReactIcons";
 
 export default function Lab2() {
   return (
-    <div id="wd-lab2">
+    <Container>
       <h2>Lab 2 - Cascading Style Sheets</h2>
       <h3>Styling with the STYLE attribute</h3>
       <p>
@@ -77,4 +78,4 @@ export default function Lab2() {
       <GridLayout />
       <Flex />
       <ReactIconsSampler />
-    </div>);}
+    </Container>);}
