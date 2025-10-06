@@ -4,7 +4,9 @@ import {
   FormSelect,
   FormCheck,
   Form,
+  InputGroup,
 } from "react-bootstrap";
+import InputGroupText from "react-bootstrap/esm/InputGroupText";
 
 export default function BootstrapForms() {
   return (
@@ -54,6 +56,19 @@ export default function BootstrapForms() {
         <h3>Range</h3>
         <FormLabel>Example range</FormLabel>
         <Form.Range min="0" max="5" step="0.5" />
+      </div>
+      <div id="wd-css-styling-addons">
+        <h3>Addons</h3>
+        <InputGroup className="mb-3">
+          <InputGroupText>$</InputGroupText>
+          <InputGroupText>0.00</InputGroupText>
+          <FormControl />
+        </InputGroup>
+        <InputGroup>
+          <FormControl />
+          <InputGroupText>$</InputGroupText>
+          <InputGroupText>0.00</InputGroupText>
+        </InputGroup>
       </div>
     </div>
   );
