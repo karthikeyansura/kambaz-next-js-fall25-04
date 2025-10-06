@@ -5,6 +5,9 @@ import {
   FormCheck,
   Form,
   InputGroup,
+  Row,
+  Col,
+  Button,
 } from "react-bootstrap";
 import InputGroupText from "react-bootstrap/esm/InputGroupText";
 
@@ -69,6 +72,103 @@ export default function BootstrapForms() {
           <InputGroupText>$</InputGroupText>
           <InputGroupText>0.00</InputGroupText>
         </InputGroup>
+      </div>
+      <div id="wd-css-responsive-forms-1">
+        <h3>Responsive forms 1</h3>
+        <Row className="mb-3">
+          <FormLabel column sm={2} htmlFor="email1">
+            Email
+          </FormLabel>
+          <Col sm={10}>
+            <FormControl
+              id="email1"
+              type="email"
+              defaultValue="email@example.com"
+            />
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <FormLabel column sm={2} htmlFor="password1">
+            Password
+          </FormLabel>
+          <Col sm={10}>
+            <FormControl id="password1" type="password" />
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <FormLabel column sm={2} htmlFor="textarea2">
+            Bio
+          </FormLabel>
+          <Col sm={10}>
+            <FormControl
+              id="textarea2"
+              as="textarea"
+              style={{ height: "100px" }}
+            />
+          </Col>
+        </Row>
+      </div>
+      <div id="wd-css-responsive-forms-2">
+        <h3>Responsive forms 2</h3>
+        <Form>
+          <Row className="mb-3">
+            <FormLabel column sm={2} htmlFor="formHorizontalEmail">
+              Email
+            </FormLabel>
+            <Col sm={10}>
+              <FormControl
+                id="formHorizontalEmail"
+                type="email"
+                placeholder="Email"
+              />
+            </Col>
+          </Row>
+          <Row className="mb-3">
+            <FormLabel column sm={2} htmlFor="formHorizontalPassword">
+              Password
+            </FormLabel>
+            <Col sm={10}>
+              <FormControl
+                id="formHorizontalPassword"
+                type="password"
+                placeholder="Password"
+              />
+            </Col>
+          </Row>
+          <fieldset>
+            <Row className="mb-3">
+              <FormLabel as="legend" column sm={2}>
+                Radios
+              </FormLabel>
+              <Col sm={10}>
+                <FormCheck
+                  type="radio"
+                  label="First radio"
+                  name="formHorizontalRadios"
+                  defaultChecked
+                />
+                <FormCheck
+                  type="radio"
+                  label="Second radio"
+                  name="formHorizontalRadios"
+                />
+                <FormCheck
+                  type="radio"
+                  label="Third radio"
+                  name="formHorizontalRadios"
+                />
+                <FormCheck
+                  type="radio"
+                  label="Remember me"
+                  name="formHorizontalRadios"
+                />
+              </Col>
+            </Row>
+          </fieldset>
+          <Col>
+            <Button type="submit">Sign in</Button>
+          </Col>
+        </Form>
       </div>
     </div>
   );
