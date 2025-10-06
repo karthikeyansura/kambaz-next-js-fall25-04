@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export default function Float() {
   return (
     <div id="wd-float-divs">
