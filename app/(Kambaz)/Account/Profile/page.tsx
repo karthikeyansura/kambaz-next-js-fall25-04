@@ -1,48 +1,59 @@
 import Link from "next/link";
+import { Container, FormControl, FormSelect } from "react-bootstrap";
 
 export default function Profile() {
   return (
-    <div id="wd-profile-screen">
+    <Container id="wd-profile" className="w-25">
       <h3>Profile</h3>
-      <label htmlFor="wd-username">Username: </label>
-      <input
+      <FormControl
+        id="wd-username"
         defaultValue="alice"
         placeholder="username"
-        className="wd-username"
+        className="mb-2"
       />
-      <br />
-      <label htmlFor="wd-password">Password: </label>
-      <input
+      <FormControl
+        id="wd-password"
         defaultValue="123"
         placeholder="password"
         type="password"
-        className="wd-password"
+        className="mb-2"
       />
-      <br />
-      <label htmlFor="wd-firstname">First Name: </label>
-      <input defaultValue="Alice" placeholder="First Name" id="wd-firstname" />
-      <br />
-      <label htmlFor="wd-lastname">Last Name: </label>
-      <input
+      <FormControl
+        id="wd-firstname"
+        defaultValue="Alice"
+        placeholder="First Name"
+        className="mb-2"
+      />
+      <FormControl
+        id="wd-lastname"
         defaultValue="Wonderland"
         placeholder="Last Name"
-        id="wd-lastname"
+        className="mb-2"
       />
-      <br />
-      <label htmlFor="wd-dob">Date of Birth: </label>
-      <input defaultValue="2000-01-01" type="date" id="wd-dob" />
-      <br />
-      <label htmlFor="wd-email">Email: </label>
-      <input defaultValue="alice@wonderland" type="email" id="wd-email" />
-      <br />
-      <label htmlFor="wd-role">Role: </label>
-      <select defaultValue="FACULTY" id="wd-role">
-        <option value="USER">User</option> <option value="ADMIN">Admin</option>
-        <option value="FACULTY">Faculty</option>{" "}
+      <FormControl
+        id="wd-dob"
+        defaultValue="2000-01-01"
+        type="date"
+        className="mb-2"
+      />
+      <FormControl
+        id="wd-email"
+        defaultValue="alice@wonderland.com"
+        type="email"
+        className="mb-2"
+      />
+      <FormSelect id="wd-role" defaultValue="USER" className="mb-2">
+        <option value="USER">User</option>
+        <option value="ADMIN">Admin</option>
+        <option value="FACULTY">Faculty</option>
         <option value="STUDENT">Student</option>
-      </select>
-      <br />
-      <Link href="Signin"> Sign out </Link>
-    </div>
+      </FormSelect>
+      <Link
+        href="/Account/Signin"
+        className="btn btn-danger w-100"
+      >
+        Signout
+      </Link>
+    </Container>
   );
 }
