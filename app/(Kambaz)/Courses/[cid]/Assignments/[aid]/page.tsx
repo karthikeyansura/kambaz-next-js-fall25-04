@@ -37,19 +37,23 @@ The Kanbas application should include a link to navigate back to the landing pag
       />
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
-          Points
-        </FormLabel>
-        <Col sm={10}>
+        <Col sm={3}>
+          <FormLabel htmlFor="wd-points" className="text-end d-block">
+            Points
+          </FormLabel>
+        </Col>
+        <Col sm={9}>
           <FormControl id="wd-points" defaultValue={100} type="number" />
         </Col>
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
-          Assignment Group
-        </FormLabel>
-        <Col sm={10}>
+        <Col sm={3}>
+          <FormLabel htmlFor="wd-group" className="text-end d-block">
+            Assignment Group
+          </FormLabel>
+        </Col>
+        <Col sm={9}>
           <FormSelect id="wd-group">
             <option>ASSIGNMENTS</option>
             <option>QUIZZES</option>
@@ -59,10 +63,12 @@ The Kanbas application should include a link to navigate back to the landing pag
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
-          Display Grade as
-        </FormLabel>
-        <Col sm={10}>
+        <Col sm={3}>
+          <FormLabel htmlFor="wd-display-grade-as" className="text-end d-block">
+            Display Grade as
+          </FormLabel>
+        </Col>
+        <Col sm={9}>
           <FormSelect id="wd-display-grade-as">
             <option>Percentage</option>
             <option>Points</option>
@@ -71,10 +77,12 @@ The Kanbas application should include a link to navigate back to the landing pag
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
-          Submission Type
-        </FormLabel>
-        <Col sm={10}>
+        <Col sm={3}>
+          <FormLabel className="text-end d-block">
+            Submission Type
+          </FormLabel>
+        </Col>
+        <Col sm={9}>
           <div className="border p-3 rounded">
             <FormSelect id="wd-submission-type" className="mb-3">
               <option>Online</option>
@@ -122,10 +130,12 @@ The Kanbas application should include a link to navigate back to the landing pag
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
-          Assign
-        </FormLabel>
-        <Col sm={10}>
+        <Col sm={3}>
+          <FormLabel className="text-end d-block">
+            Assign
+          </FormLabel>
+        </Col>
+        <Col sm={9}>
           <div className="border p-3 rounded">
             <FormLabel htmlFor="wd-assign-to">
               <strong>Assign to</strong>
