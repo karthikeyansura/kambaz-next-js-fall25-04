@@ -40,7 +40,7 @@ export default function AssignmentEditor() {
       />
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
+        <FormLabel column sm={2} className="wd-assignment-details-label text-end">
           Points
         </FormLabel>
         <Col sm={10}>
@@ -49,7 +49,7 @@ export default function AssignmentEditor() {
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
+        <FormLabel column sm={2} className="wd-assignment-details-label text-end">
           Assignment Group
         </FormLabel>
         <Col sm={10}>
@@ -62,7 +62,7 @@ export default function AssignmentEditor() {
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
+        <FormLabel column sm={2} className="wd-assignment-details-label text-end">
           Display Grade as
         </FormLabel>
         <Col sm={10}>
@@ -74,7 +74,7 @@ export default function AssignmentEditor() {
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
+        <FormLabel column sm={2} className="wd-assignment-details-label text-end">
           Submission Type
         </FormLabel>
         <Col sm={10}>
@@ -125,7 +125,7 @@ export default function AssignmentEditor() {
       </Row>
 
       <Row className="mb-3">
-        <FormLabel column sm={2} className="wd-assignment-details-label">
+        <FormLabel column sm={2} className="wd-assignment-details-label text-end">
           Assign
         </FormLabel>
         <Col sm={10}>
