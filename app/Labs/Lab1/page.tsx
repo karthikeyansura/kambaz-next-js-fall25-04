@@ -1,4 +1,5 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import Button from "./Button";
 
 export default function Lab1() {
@@ -174,23 +175,15 @@ export default function Lab1() {
       <div id="wd-images">
         <h4>Image tag</h4>
         Loading an image from the internet: <br />
-        <Image
+        <img
           id="wd-starship"
+          width="400px"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
-          alt="Starship rocket on launch pad"
-          width={400}
-          height={250}
         />
         <br />
         Loading a local image:
         <br />
-        <Image
-          id="wd-teslabot"
-          src="/images/teslabot.jpg"
-          alt="Tesla Bot prototype"
-          width={200}
-          height={250}
-        />
+        <img id="wd-teslabot" src="/images/teslabot.jpg" height="200px" />
       </div>
 
       <div id="wd-forms">
