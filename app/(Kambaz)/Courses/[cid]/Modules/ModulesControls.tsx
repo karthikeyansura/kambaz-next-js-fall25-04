@@ -1,41 +1,63 @@
-import { Button, Dropdown } from "react-bootstrap";
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "react-bootstrap";
 import { FaPlus } from "react-icons/fa6";
-import { IoBan } from "react-icons/io5";
 import GreenCheckmark from "./GreenCheckmark";
+import { IoBanOutline } from "react-icons/io5";
 
 export default function ModulesControls() {
   return (
     <div id="wd-modules-controls" className="text-nowrap">
-      <Button variant="secondary" size="lg" className="me-1 float-end" id="wd-collapse-all">
-        Collapse All
-      </Button>
-      <Button variant="secondary" size="lg" className="me-1 float-end" id="wd-view-progress">
-        View Progress
-      </Button>
-      <Dropdown className="float-end me-2">
-        <Dropdown.Toggle variant="secondary" size="lg" id="wd-publish-all-btn">
-          <GreenCheckmark /> Publish All
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item id="wd-publish-all-modules-and-items">
-            <GreenCheckmark /> Publish all modules and items
-          </Dropdown.Item>
-          <Dropdown.Item id="wd-publish-modules-only">
-            <GreenCheckmark /> Publish modules only
-          </Dropdown.Item>
-          <Dropdown.Item id="wd-unpublish-all-modules-and-items">
-            <IoBan className="me-2 fs-5" />
-            Unpublish all modules and items
-          </Dropdown.Item>
-          <Dropdown.Item id="wd-unpublish-modules-only">
-            <IoBan className="me-2 fs-5" />
-            Unpublish modules only
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <Button variant="danger" size="lg" className="me-1 float-end" id="wd-add-module-btn">
+      <Button
+        variant="danger"
+        size="lg"
+        className="me-1 float-end"
+        id="wd-add-module-btn"
+      >
         <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
         Module
+      </Button>
+      <Dropdown className="float-end me-2">
+        <DropdownToggle variant="secondary" size="lg" id="wd-publish-all-btn">
+          <GreenCheckmark /> Publish All
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem id="wd-publish-all">
+            <GreenCheckmark /> Publish All
+          </DropdownItem>
+          <DropdownItem id="wd-publish-all-modules-and-items">
+            <GreenCheckmark /> Publish all modules and items
+          </DropdownItem>
+          <DropdownItem id="wd-publish-modules-only">
+            <GreenCheckmark /> Publish modules only
+          </DropdownItem>
+          <DropdownItem id="wd-unpublish-all-modules-and-items">
+            <IoBanOutline /> Unpublish all modules and items
+          </DropdownItem>
+          <DropdownItem id="wd-unpublish-modules-only">
+            <IoBanOutline /> Unpublish modules only
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+      <Button
+        variant="secondary"
+        size="lg"
+        className="me-1 float-end"
+        id="wd-view-progress"
+      >
+        View Progress
+      </Button>
+      <Button
+        variant="secondary"
+        size="lg"
+        className="me-1 float-end"
+        id="wd-collapse-all"
+      >
+        Collapse All
       </Button>
     </div>
   );

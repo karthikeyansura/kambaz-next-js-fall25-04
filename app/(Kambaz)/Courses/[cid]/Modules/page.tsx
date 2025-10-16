@@ -1,74 +1,51 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useParams } from "next/navigation";
-import * as db from "../../../Database";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+
+import { Container, ListGroup } from "react-bootstrap";
+import ModulesControls from "./ModulesControls";
 import { BsGripVertical } from "react-icons/bs";
-import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
-
-function ModuleControlButtons() {
-  return (
-    <div className="float-end">
-      <FaCheckCircle className="text-success me-2 fs-5" />
-      <FaEllipsisV className="fs-5" />
-    </div>
-  );
-}
-
-function LessonControlButtons() {
-  return (
-    <div className="float-end">
-      <FaCheckCircle className="text-success me-2 fs-5" />
-      <FaEllipsisV className="fs-5" />
-    </div>
-  );
-}
+import LessonControlButtons from "./LessonControlButtons";
+import ModuleControlButtons from "./ModuleControlButtons";
+import * as db from "../../../Database";
+import { useParams } from "next/navigation";
 
 export default function Modules() {
   const { cid } = useParams();
   const modules = db.modules;
   return (
-    <div>
-      <div className="d-flex justify-content-end mb-3">
-        <button className="btn btn-light me-1">Collapse All</button>
-        <button className="btn btn-light me-1">View Progress</button>
-        <select className="form-select me-1" style={{ width: "auto" }}>
-          <option>Publish All</option>
-        </select>
-        <button className="btn btn-danger">+ Module</button>
-      </div>
-
-      <ListGroup id="wd-modules" className="rounded-0">
+    <Container>
+      <ModulesControls />
+      <br />
+      <br />
+      <br />
+      <br />
+      <ListGroup className="rounded-0" id="wd-modules">
         {modules
-          .filter((module: any) => module.course === cid)
-          .map((module: any) => (
-            <ListGroupItem
+          .filter((module) => module.course === cid)
+          .map((module) => (
+            <ListGroup.Item
               key={module._id}
               className="wd-module p-0 mb-5 fs-5 border-gray"
             >
-              <div className="wd-title p-3 ps-2 bg-secondary text-white">
-                <BsGripVertical className="me-2 fs-3" />
-                {module.name}
+              <div className="wd-title p-3 ps-2 bg-secondary">
+                <BsGripVertical className="me-2 fs-3" /> {module.name}{" "}
                 <ModuleControlButtons />
               </div>
-
               {module.lessons && (
                 <ListGroup className="wd-lessons rounded-0">
-                  {module.lessons.map((lesson: any) => (
-                    <ListGroupItem
+                  {module.lessons.map((lesson) => (
+                    <ListGroup.Item
                       key={lesson._id}
                       className="wd-lesson p-3 ps-1"
                     >
-                      <BsGripVertical className="me-2 fs-3" />
-                      {lesson.name}
+                      <BsGripVertical className="me-2 fs-3" /> {lesson.name}{" "}
                       <LessonControlButtons />
-                    </ListGroupItem>
+                    </ListGroup.Item>
                   ))}
                 </ListGroup>
               )}
-            </ListGroupItem>
+            </ListGroup.Item>
           ))}
       </ListGroup>
-    </div>
+    </Container>
   );
 }
