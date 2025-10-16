@@ -1,4 +1,7 @@
+"use client";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import * as db from "../../../Database";
 import {
   Button,
   InputGroup,
@@ -15,6 +18,9 @@ import { FaCheckCircle } from "react-icons/fa";
 import { RxFileText } from "react-icons/rx";
 
 export default function Assignments() {
+  const { cid } = useParams();
+  const assignments = db.assignments;
+
   return (
     <Container id="wd-assignments">
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -54,9 +60,9 @@ export default function Assignments() {
             </div>
             <div className="d-flex align-items-center">
               <Badge
-                bg="white"
+                bg="light"
                 text="dark"
-                className="me-2 rounded-pill px-3 py-2 border"
+                className="me-2 rounded-pill px-3 py-2"
               >
                 40% of Total
               </Badge>
@@ -66,83 +72,35 @@ export default function Assignments() {
           </div>
 
           <ListGroup className="rounded-0">
-            <ListGroupItem className="wd-lesson p-3 ps-1">
-              <div className="d-flex justify-content-between align-items-start">
-                <div className="d-flex align-items-start">
-                  <BsGripVertical className="me-2 fs-3" />
-                  <RxFileText className="me-3 fs-4 text-success" />
-                  <div>
-                    <Link
-                      href="/Courses/1234/Assignments/123"
-                      className="wd-assignment-link text-dark fw-bold text-decoration-none"
-                    >
-                      A1
-                    </Link>
-                    <div className="text-muted" style={{ fontSize: "0.85rem" }}>
-                      <span className="text-danger">Multiple Modules</span> |{" "}
-                      <strong>Not available until</strong> May 6 at 12:00am |{" "}
-                      <strong>Due</strong> May 13 at 11:59pm | 100 pts
+            {assignments
+              .filter((assignment) => assignment.course === cid)
+              .map((assignment) => (
+                <ListGroupItem key={assignment._id} className="wd-lesson p-3 ps-1">
+                  <div className="d-flex justify-content-between align-items-start">
+                    <div className="d-flex align-items-start">
+                      <BsGripVertical className="me-2 fs-3" />
+                      <RxFileText className="me-3 fs-4 text-success" />
+                      <div>
+                        <Link
+                          href={`/Courses/${cid}/Assignments/${assignment._id}`}
+                          className="wd-assignment-link text-dark fw-bold text-decoration-none"
+                        >
+                          {assignment.title}
+                        </Link>
+                        <div className="text-muted" style={{ fontSize: "0.85rem" }}>
+                          <span className="text-danger">Multiple Modules</span> |{" "}
+                          <strong>Not available until</strong> May 6 at 12:00am |{" "}
+                          <strong>Due</strong> May 13 at 11:59pm | 100 pts
+                        </div>
+                      </div>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <FaCheckCircle className="text-success me-2" />
+                      <IoEllipsisVertical className="fs-4" />
                     </div>
                   </div>
-                </div>
-                <div className="d-flex align-items-center">
-                  <FaCheckCircle className="text-success me-2" />
-                  <IoEllipsisVertical className="fs-4" />
-                </div>
-              </div>
-            </ListGroupItem>
-
-            <ListGroupItem className="wd-lesson p-3 ps-1">
-              <div className="d-flex justify-content-between align-items-start">
-                <div className="d-flex align-items-start">
-                  <BsGripVertical className="me-2 fs-3" />
-                  <RxFileText className="me-3 fs-4 text-success" />
-                  <div>
-                    <Link
-                      href="/Courses/1234/Assignments/234"
-                      className="wd-assignment-link text-dark fw-bold text-decoration-none"
-                    >
-                      A2
-                    </Link>
-                    <div className="text-muted" style={{ fontSize: "0.85rem" }}>
-                      <span className="text-danger">Multiple Modules</span> |{" "}
-                      <strong>Not available until</strong> May 13 at 12:00am |{" "}
-                      <strong>Due</strong> May 20 at 11:59pm | 100 pts
-                    </div>
-                  </div>
-                </div>
-                <div className="d-flex align-items-center">
-                  <FaCheckCircle className="text-success me-2" />
-                  <IoEllipsisVertical className="fs-4" />
-                </div>
-              </div>
-            </ListGroupItem>
-
-            <ListGroupItem className="wd-lesson p-3 ps-1">
-              <div className="d-flex justify-content-between align-items-start">
-                <div className="d-flex align-items-start">
-                  <BsGripVertical className="me-2 fs-3" />
-                  <RxFileText className="me-3 fs-4 text-success" />
-                  <div>
-                    <Link
-                      href="/Courses/1234/Assignments/345"
-                      className="wd-assignment-link text-dark fw-bold text-decoration-none"
-                    >
-                      A3
-                    </Link>
-                    <div className="text-muted" style={{ fontSize: "0.85rem" }}>
-                      <span className="text-danger">Multiple Modules</span> |{" "}
-                      <strong>Not available until</strong> May 20 at 12:00am |{" "}
-                      <strong>Due</strong> May 27 at 11:59pm | 100 pts
-                    </div>
-                  </div>
-                </div>
-                <div className="d-flex align-items-center">
-                  <FaCheckCircle className="text-success me-2" />
-                  <IoEllipsisVertical className="fs-4" />
-                </div>
-              </div>
-            </ListGroupItem>
+                </ListGroupItem>
+              ))}
           </ListGroup>
         </ListGroupItem>
       </ListGroup>

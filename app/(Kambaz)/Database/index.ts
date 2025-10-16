@@ -1,3 +1,7 @@
-import courses from "./courses.json" assert { type: "json" };
-import modules from "./modules.json" assert { type: "json" };
-export { courses, modules };
+import courses from "./courses.json";
+import modules from "./modules.json";
+import assignments from "./assignments.json";
+import users from "./users.json";
+import enrollments from "./enrollments.json";
+
+export {courses, modules, assignments, users, enrollments};
