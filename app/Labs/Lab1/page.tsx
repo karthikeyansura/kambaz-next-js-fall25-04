@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "./Button";
 
 export default function Lab1() {
@@ -173,15 +174,23 @@ export default function Lab1() {
       <div id="wd-images">
         <h4>Image tag</h4>
         Loading an image from the internet: <br />
-        <img
+        <Image
           id="wd-starship"
-          width="400px"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          alt="Starship rocket on launch pad"
+          width={400}
+          height={250}
         />
         <br />
         Loading a local image:
         <br />
-        <img id="wd-teslabot" src="/images/teslabot.jpg" height="200px" />
+        <Image
+          id="wd-teslabot"
+          src="/images/teslabot.jpg"
+          alt="Tesla Bot prototype"
+          width={200}
+          height={250}
+        />
       </div>
 
       <div id="wd-forms">
