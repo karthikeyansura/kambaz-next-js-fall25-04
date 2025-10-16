@@ -1,2 +1,3 @@
 import courses from "./courses.json" assert { type: "json" };
-export { courses };
+import modules from "./modules.json" assert { type: "json" };
+export { courses, modules };

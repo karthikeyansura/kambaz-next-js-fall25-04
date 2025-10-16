@@ -1,0 +1,626 @@
+[
+  {
+    "_id": "M101",
+    "name": "Introduction to Rocket Propulsion",
+    "description": "Basic principles of rocket propulsion and rocket engines.",
+    "course": "RS101",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "History of Rocketry",
+        "description": "A brief history of rocketry and space exploration.",
+        "module": "M101"
+      },
+      {
+        "_id": "L102",
+        "name": "Rocket Propulsion Fundamentals",
+        "description": "Basic principles of rocket propulsion.",
+        "module": "M101"
+      },
+      {
+        "_id": "L103",
+        "name": "Rocket Engine Types",
+        "description": "Overview of different types of rocket engines.",
+        "module": "M101"
+      }
+    ]
+  },
+  {
+    "_id": "M102",
+    "name": "Fuel and Combustion",
+    "description": "Understanding rocket fuel, combustion processes, and efficiency.",
+    "course": "RS101",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Rocket Fuel",
+        "description": "Overview of different types of rocket fuels.",
+        "module": "M102"
+      },
+      {
+        "_id": "L202",
+        "name": "Combustion Processes",
+        "description": "Understanding combustion processes and efficiency.",
+        "module": "M102"
+      },
+      {
+        "_id": "L203",
+        "name": "Combustion Instability",
+        "description": "Understanding combustion instability and mitigation.",
+        "module": "M102"
+      }
+    ]
+  },
+  {
+    "_id": "M103",
+    "name": "Nozzle Design",
+    "description": "Principles of rocket nozzle design and performance optimization.",
+    "course": "RS101",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "Nozzle Design",
+        "description": "Overview of different types of rocket nozzles.",
+        "module": "M103"
+      },
+      {
+        "_id": "L302",
+        "name": "Nozzle Performance",
+        "description": "Understanding nozzle performance and efficiency.",
+        "module": "M103"
+      },
+      {
+        "_id": "L303",
+        "name": "Nozzle Optimization",
+        "description": "Optimizing nozzle design for specific applications.",
+        "module": "M103"
+      }
+    ]
+  },
+  {
+    "_id": "M201",
+    "name": "Fundamentals of Aerodynamics",
+    "description": "Basic aerodynamic concepts and fluid dynamics principles.",
+    "course": "RS102",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Fluid Dynamics Principles",
+        "description": "Basic principles of fluid flow and dynamics.",
+        "module": "M201"
+      },
+      {
+        "_id": "L202",
+        "name": "Bernoulli's Equation",
+        "description": "Understanding Bernoulli's principle and applications.",
+        "module": "M201"
+      },
+      {
+        "_id": "L203",
+        "name": "Boundary Layer Theory",
+        "description": "Introduction to boundary layer concepts.",
+        "module": "M201"
+      }
+    ]
+  },
+  {
+    "_id": "M202",
+    "name": "Subsonic and Supersonic Flow",
+    "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
+    "course": "RS102",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Subsonic Flow Characteristics",
+        "description": "Properties and behavior of subsonic airflow.",
+        "module": "M202"
+      },
+      {
+        "_id": "L202",
+        "name": "Supersonic Flow Dynamics",
+        "description": "Understanding shock waves and supersonic phenomena.",
+        "module": "M202"
+      },
+      {
+        "_id": "L203",
+        "name": "Transonic Region",
+        "description": "Challenges in the transonic flight regime.",
+        "module": "M202"
+      }
+    ]
+  },
+  {
+    "_id": "M203",
+    "name": "Aerodynamic Heating",
+    "description": "Study of aerodynamic heating and thermal protection systems.",
+    "course": "RS102",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Heat Transfer Mechanisms",
+        "description": "Conduction, convection, and radiation in aerodynamic heating.",
+        "module": "M203"
+      },
+      {
+        "_id": "L202",
+        "name": "Thermal Protection Systems",
+        "description": "Materials and designs for thermal protection.",
+        "module": "M203"
+      },
+      {
+        "_id": "L203",
+        "name": "Re-entry Heating",
+        "description": "Specific challenges of atmospheric re-entry heating.",
+        "module": "M203"
+      }
+    ]
+  },
+  {
+    "_id": "M301",
+    "name": "Spacecraft Structural Design",
+    "description": "Fundamentals of designing spacecraft structures and materials selection.",
+    "course": "RS103",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "Structural Load Analysis",
+        "description": "Understanding forces and stresses on spacecraft structures.",
+        "module": "M301"
+      },
+      {
+        "_id": "L102",
+        "name": "Materials Selection",
+        "description": "Choosing appropriate materials for spacecraft construction.",
+        "module": "M301"
+      },
+      {
+        "_id": "L103",
+        "name": "Structural Design Optimization",
+        "description": "Optimizing spacecraft structures for mass and strength.",
+        "module": "M301"
+      }
+    ]
+  },
+  {
+    "_id": "M302",
+    "name": "Orbital Mechanics",
+    "description": "Understanding orbital dynamics and mission planning.",
+    "course": "RS103",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Kepler's Laws",
+        "description": "Fundamental laws governing orbital motion.",
+        "module": "M302"
+      },
+      {
+        "_id": "L202",
+        "name": "Orbital Maneuvers",
+        "description": "Hohmann transfers and other orbital maneuvers.",
+        "module": "M302"
+      },
+      {
+        "_id": "L203",
+        "name": "Interplanetary Trajectories",
+        "description": "Planning trajectories for interplanetary missions.",
+        "module": "M302"
+      }
+    ]
+  },
+  {
+    "_id": "M303",
+    "name": "Spacecraft Systems Engineering",
+    "description": "Overview of spacecraft systems and subsystems engineering.",
+    "course": "RS103",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "Systems Engineering Process",
+        "description": "Overview of the systems engineering lifecycle.",
+        "module": "M303"
+      },
+      {
+        "_id": "L302",
+        "name": "Subsystem Integration",
+        "description": "Integrating various spacecraft subsystems.",
+        "module": "M303"
+      },
+      {
+        "_id": "L303",
+        "name": "System Testing and Validation",
+        "description": "Testing methodologies for spacecraft systems.",
+        "module": "M303"
+      }
+    ]
+  },
+  {
+    "_id": "M401",
+    "name": "Introduction to Organic Compounds",
+    "description": "Fundamentals of organic chemistry and hydrocarbon structures.",
+    "course": "RS104",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "Hydrocarbons and Nomenclature",
+        "description": "Introduction to organic compound naming and classification.",
+        "module": "M401"
+      },
+      {
+        "_id": "L102",
+        "name": "Functional Groups",
+        "description": "Understanding common functional groups in organic chemistry.",
+        "module": "M401"
+      },
+      {
+        "_id": "L103",
+        "name": "Isomerism and Structure",
+        "description": "Exploring structural and stereoisomerism.",
+        "module": "M401"
+      }
+    ]
+  },
+  {
+    "_id": "M402",
+    "name": "Organic Reactions and Mechanisms",
+    "description": "Study of reaction mechanisms and organic synthesis.",
+    "course": "RS104",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Substitution Reactions",
+        "description": "Nucleophilic and electrophilic substitution mechanisms.",
+        "module": "M402"
+      },
+      {
+        "_id": "L202",
+        "name": "Addition and Elimination Reactions",
+        "description": "Understanding addition and elimination reaction pathways.",
+        "module": "M402"
+      },
+      {
+        "_id": "L203",
+        "name": "Carbonyl Chemistry",
+        "description": "Reactions of aldehydes, ketones, and carboxylic acids.",
+        "module": "M402"
+      }
+    ]
+  },
+  {
+    "_id": "M403",
+    "name": "Spectroscopy and Analysis",
+    "description": "Techniques for determining organic compound structures.",
+    "course": "RS104",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "NMR Spectroscopy",
+        "description": "Nuclear magnetic resonance for structure determination.",
+        "module": "M403"
+      },
+      {
+        "_id": "L302",
+        "name": "IR and UV-Vis Spectroscopy",
+        "description": "Infrared and ultraviolet-visible spectroscopic methods.",
+        "module": "M403"
+      },
+      {
+        "_id": "L303",
+        "name": "Mass Spectrometry",
+        "description": "Mass spectrometric analysis of organic compounds.",
+        "module": "M403"
+      }
+    ]
+  },
+  {
+    "_id": "M501",
+    "name": "Coordination Chemistry",
+    "description": "Study of metal complexes and coordination compounds.",
+    "course": "RS105",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "Complex Formation",
+        "description": "Introduction to coordination compounds and ligands.",
+        "module": "M501"
+      },
+      {
+        "_id": "L102",
+        "name": "Bonding in Metal Complexes",
+        "description": "Valence bond and crystal field theories.",
+        "module": "M501"
+      },
+      {
+        "_id": "L103",
+        "name": "Isomerism in Complexes",
+        "description": "Geometric and optical isomerism in coordination compounds.",
+        "module": "M501"
+      }
+    ]
+  },
+  {
+    "_id": "M502",
+    "name": "Main Group Chemistry",
+    "description": "Properties and reactions of main group elements.",
+    "course": "RS105",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Group Trends",
+        "description": "Periodic trends in main group elements.",
+        "module": "M502"
+      },
+      {
+        "_id": "L202",
+        "name": "Nonmetal Chemistry",
+        "description": "Chemistry of nonmetals and their compounds.",
+        "module": "M502"
+      },
+      {
+        "_id": "L203",
+        "name": "Organometallic Compounds",
+        "description": "Introduction to organometallic chemistry.",
+        "module": "M502"
+      }
+    ]
+  },
+  {
+    "_id": "M503",
+    "name": "Solid State and Materials Chemistry",
+    "description": "Study of solid-state structures and materials.",
+    "course": "RS105",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "Crystal Structures",
+        "description": "Understanding crystal lattices and unit cells.",
+        "module": "M503"
+      },
+      {
+        "_id": "L302",
+        "name": "Band Theory",
+        "description": "Electronic band structure in solids.",
+        "module": "M503"
+      },
+      {
+        "_id": "L303",
+        "name": "Advanced Materials",
+        "description": "Semiconductors, superconductors, and nanomaterials.",
+        "module": "M503"
+      }
+    ]
+  },
+  {
+    "_id": "M601",
+    "name": "Thermodynamics",
+    "description": "Chemical thermodynamics and energy transformations.",
+    "course": "RS106",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "Laws of Thermodynamics",
+        "description": "First, second, and third laws of thermodynamics.",
+        "module": "M601"
+      },
+      {
+        "_id": "L102",
+        "name": "Enthalpy and Entropy",
+        "description": "Understanding heat changes and disorder in systems.",
+        "module": "M601"
+      },
+      {
+        "_id": "L103",
+        "name": "Gibbs Free Energy",
+        "description": "Spontaneity and equilibrium in chemical reactions.",
+        "module": "M601"
+      }
+    ]
+  },
+  {
+    "_id": "M602",
+    "name": "Chemical Kinetics",
+    "description": "Study of reaction rates and mechanisms.",
+    "course": "RS106",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Rate Laws",
+        "description": "Determining reaction order and rate constants.",
+        "module": "M602"
+      },
+      {
+        "_id": "L202",
+        "name": "Reaction Mechanisms",
+        "description": "Elementary steps and rate-determining steps.",
+        "module": "M602"
+      },
+      {
+        "_id": "L203",
+        "name": "Catalysis",
+        "description": "Homogeneous and heterogeneous catalysis.",
+        "module": "M602"
+      }
+    ]
+  },
+  {
+    "_id": "M603",
+    "name": "Quantum Chemistry",
+    "description": "Quantum mechanical principles in chemistry.",
+    "course": "RS106",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "Wave-Particle Duality",
+        "description": "Introduction to quantum mechanics for chemistry.",
+        "module": "M603"
+      },
+      {
+        "_id": "L302",
+        "name": "Atomic Orbitals",
+        "description": "Quantum description of atomic structure.",
+        "module": "M603"
+      },
+      {
+        "_id": "L303",
+        "name": "Molecular Orbital Theory",
+        "description": "Bonding in molecules using MO theory.",
+        "module": "M603"
+      }
+    ]
+  },
+  {
+    "_id": "M701",
+    "name": "Elvish Languages",
+    "description": "Study of Sindarin and Quenya languages.",
+    "course": "RS107",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "Introduction to Sindarin",
+        "description": "Grammar and vocabulary of the Grey-elven tongue.",
+        "module": "M701"
+      },
+      {
+        "_id": "L102",
+        "name": "Quenya Fundamentals",
+        "description": "High-elven language structure and usage.",
+        "module": "M701"
+      },
+      {
+        "_id": "L103",
+        "name": "Elvish Scripts",
+        "description": "Tengwar writing system and its applications.",
+        "module": "M701"
+      }
+    ]
+  },
+  {
+    "_id": "M702",
+    "name": "Dwarvish and Other Languages",
+    "description": "Exploration of Khuzdul and lesser-known tongues.",
+    "course": "RS107",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Khuzdul Language",
+        "description": "The secret language of the Dwarves.",
+        "module": "M702"
+      },
+      {
+        "_id": "L202",
+        "name": "Black Speech of Mordor",
+        "description": "The dark language created by Sauron.",
+        "module": "M702"
+      },
+      {
+        "_id": "L203",
+        "name": "Westron and Common Speech",
+        "description": "The common language of Middle-earth peoples.",
+        "module": "M702"
+      }
+    ]
+  },
+  {
+    "_id": "M703",
+    "name": "Ancient Scripts and Inscriptions",
+    "description": "Study of historical texts and runes.",
+    "course": "RS107",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "Cirth Runes",
+        "description": "Runic alphabets used by Dwarves and Men.",
+        "module": "M703"
+      },
+      {
+        "_id": "L302",
+        "name": "Ancient Inscriptions",
+        "description": "Reading and interpreting historical texts.",
+        "module": "M703"
+      },
+      {
+        "_id": "L303",
+        "name": "Linguistic Evolution",
+        "description": "How languages changed through the Ages.",
+        "module": "M703"
+      }
+    ]
+  },
+  {
+    "_id": "M801",
+    "name": "Historical Alliances",
+    "description": "Major alliances and partnerships in Middle-earth history.",
+    "course": "RS108",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "The Last Alliance",
+        "description": "Elves and Men united against Sauron.",
+        "module": "M801"
+      },
+      {
+        "_id": "L102",
+        "name": "The Fellowship of the Ring",
+        "description": "Inter-species cooperation in the Third Age.",
+        "module": "M801"
+      },
+      {
+        "_id": "L103",
+        "name": "Dwarf-Elf Relations",
+        "description": "Historical tensions and reconciliations.",
+        "module": "M801"
+      }
+    ]
+  },
+  {
+    "_id": "M802",
+    "name": "Diplomatic Strategies",
+    "description": "Negotiation and conflict resolution techniques.",
+    "course": "RS108",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "The Council of Elrond",
+        "description": "Case study in multi-racial diplomacy.",
+        "module": "M802"
+      },
+      {
+        "_id": "L202",
+        "name": "Leadership and Wisdom",
+        "description": "Role of Gandalf and other leaders.",
+        "module": "M802"
+      },
+      {
+        "_id": "L203",
+        "name": "Treaty Making",
+        "description": "Forming and maintaining diplomatic agreements.",
+        "module": "M802"
+      }
+    ]
+  },
+  {
+    "_id": "M803",
+    "name": "War and Peace",
+    "description": "Military conflicts and peacekeeping in Middle-earth.",
+    "course": "RS108",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "The War of the Ring",
+        "description": "Military strategy and inter-species cooperation.",
+        "module": "M803"
+      },
+      {
+        "_id": "L302",
+        "name": "Post-War Reconstruction",
+        "description": "Rebuilding relationships after conflict.",
+        "module": "M803"
+      },
+      {
+        "_id": "L303",
+        "name": "Cultural Understanding",
+        "description": "Respecting differences among the Free Peoples.",
+        "module": "M803"
+      }
+    ]
+  }
+]
