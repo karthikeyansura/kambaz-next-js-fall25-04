@@ -1,3 +1,8 @@
+
+"use client";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import * as db from "../../../../Database";
 import {
   Button,
   Col,
@@ -10,12 +15,19 @@ import {
 } from "react-bootstrap";
 
 export default function AssignmentEditor() {
+  const { cid, aid } = useParams();
+  const assignment = db.assignments.find((a) => a._id === aid);
+
+  if (!assignment) {
+    return <Container><p>Assignment not found</p></Container>;
+  }
+
   return (
     <Container>
       <FormLabel htmlFor="wd-name">Assignment Name</FormLabel>
       <FormControl
         id="wd-name"
-        defaultValue="A1 - ENV + HTML"
+        defaultValue={assignment.title}
         className="mb-3"
       />
 
@@ -24,36 +36,23 @@ export default function AssignmentEditor() {
         id="wd-description"
         rows={10}
         className="mb-3"
-        defaultValue={`The assignment is available online Submit a link to the landing page of your Web application running on Netlify.
-
-The landing page should include the following:
-
-• Your full name and section
-• Links to each of the lab assignments
-• Link to the Kanbas application
-• Links to all relevant source code repositories
-
-The Kanbas application should include a link to navigate back to the landing page.`}
+        defaultValue={assignment.description}
       />
 
       <Row className="mb-3">
-        <Col sm={3}>
-          <FormLabel htmlFor="wd-points" className="text-end d-block">
-            Points
-          </FormLabel>
-        </Col>
-        <Col sm={9}>
-          <FormControl id="wd-points" defaultValue={100} type="number" />
+        <FormLabel column sm={2} className="wd-assignment-details-label">
+          Points
+        </FormLabel>
+        <Col sm={10}>
+          <FormControl id="wd-points" defaultValue={assignment.points} type="number" />
         </Col>
       </Row>
 
       <Row className="mb-3">
-        <Col sm={3}>
-          <FormLabel htmlFor="wd-group" className="text-end d-block">
-            Assignment Group
-          </FormLabel>
-        </Col>
-        <Col sm={9}>
+        <FormLabel column sm={2} className="wd-assignment-details-label">
+          Assignment Group
+        </FormLabel>
+        <Col sm={10}>
           <FormSelect id="wd-group">
             <option>ASSIGNMENTS</option>
             <option>QUIZZES</option>
@@ -63,12 +62,10 @@ The Kanbas application should include a link to navigate back to the landing pag
       </Row>
 
       <Row className="mb-3">
-        <Col sm={3}>
-          <FormLabel htmlFor="wd-display-grade-as" className="text-end d-block">
-            Display Grade as
-          </FormLabel>
-        </Col>
-        <Col sm={9}>
+        <FormLabel column sm={2} className="wd-assignment-details-label">
+          Display Grade as
+        </FormLabel>
+        <Col sm={10}>
           <FormSelect id="wd-display-grade-as">
             <option>Percentage</option>
             <option>Points</option>
@@ -77,12 +74,10 @@ The Kanbas application should include a link to navigate back to the landing pag
       </Row>
 
       <Row className="mb-3">
-        <Col sm={3}>
-          <FormLabel className="text-end d-block">
-            Submission Type
-          </FormLabel>
-        </Col>
-        <Col sm={9}>
+        <FormLabel column sm={2} className="wd-assignment-details-label">
+          Submission Type
+        </FormLabel>
+        <Col sm={10}>
           <div className="border p-3 rounded">
             <FormSelect id="wd-submission-type" className="mb-3">
               <option>Online</option>
@@ -130,12 +125,10 @@ The Kanbas application should include a link to navigate back to the landing pag
       </Row>
 
       <Row className="mb-3">
-        <Col sm={3}>
-          <FormLabel className="text-end d-block">
-            Assign
-          </FormLabel>
-        </Col>
-        <Col sm={9}>
+        <FormLabel column sm={2} className="wd-assignment-details-label">
+          Assign
+        </FormLabel>
+        <Col sm={10}>
           <div className="border p-3 rounded">
             <FormLabel htmlFor="wd-assign-to">
               <strong>Assign to</strong>
@@ -151,21 +144,21 @@ The Kanbas application should include a link to navigate back to the landing pag
               <strong>Due</strong>
             </FormLabel>
             <FormControl
-              type="date"
+              type="datetime-local"
               id="wd-due-date"
-              defaultValue="2023-10-20"
+              defaultValue={assignment.dueDate}
               className="mb-3"
             />
 
             <Row>
               <Col sm={6}>
                 <FormLabel htmlFor="wd-available-from">
-                  <strong>Available From</strong>
+                  <strong>Available from</strong>
                 </FormLabel>
                 <FormControl
-                  type="date"
+                  type="datetime-local"
                   id="wd-available-from"
-                  defaultValue="2023-10-01"
+                  defaultValue={assignment.availableDate}
                 />
               </Col>
               <Col sm={6}>
@@ -173,9 +166,9 @@ The Kanbas application should include a link to navigate back to the landing pag
                   <strong>Until</strong>
                 </FormLabel>
                 <FormControl
-                  type="date"
+                  type="datetime-local"
                   id="wd-available-until"
-                  defaultValue="2023-10-21"
+                  defaultValue={assignment.untilDate}
                 />
               </Col>
             </Row>
@@ -186,12 +179,16 @@ The Kanbas application should include a link to navigate back to the landing pag
       <hr />
 
       <div className="text-end">
-        <Button variant="secondary" className="me-2" id="wd-cancel-assignment">
-          Cancel
-        </Button>
-        <Button variant="danger" id="wd-save-assignment">
-          Save
-        </Button>
+        <Link href={`/Courses/${cid}/Assignments`}>
+          <Button variant="secondary" className="me-2" id="wd-cancel-assignment">
+            Cancel
+          </Button>
+        </Link>
+        <Link href={`/Courses/${cid}/Assignments`}>
+          <Button variant="danger" id="wd-save-assignment">
+            Save
+          </Button>
+        </Link>
       </div>
     </Container>
   );
