@@ -17,6 +17,20 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCheckCircle } from "react-icons/fa";
 import { RxFileText } from "react-icons/rx";
 
+function formatDate(dateString?: string): string {
+  if (!dateString) return "N/A";
+  const date = new Date(dateString);
+  return isNaN(date.getTime())
+    ? "Invalid Date"
+    : date.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
+}
+
 export default function Assignments() {
   const { cid } = useParams();
   const assignments = db.assignments;
@@ -89,8 +103,8 @@ export default function Assignments() {
                         </Link>
                         <div className="text-muted" style={{ fontSize: "0.85rem" }}>
                           <span className="text-danger">Multiple Modules</span> |{" "}
-                          <strong>Not available until</strong> {assignment.availableDate} |{" "}
-                          <strong>Due</strong> {assignment.dueDate} | {assignment.points} pts
+                          <strong>Not available until</strong> {formatDate(assignment.availableDate)} |{" "}
+                          <strong>Due</strong> {formatDate(assignment.dueDate)} | {assignment.points} pts
                         </div>
                       </div>
                     </div>
