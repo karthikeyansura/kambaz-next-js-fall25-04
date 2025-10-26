@@ -89,8 +89,8 @@ export default function Assignments() {
                         </Link>
                         <div className="text-muted" style={{ fontSize: "0.85rem" }}>
                           <span className="text-danger">Multiple Modules</span> |{" "}
-                          <strong>Not available until</strong> May 6 at 12:00am |{" "}
-                          <strong>Due</strong> May 13 at 11:59pm | 100 pts
+                          <strong>Not available until</strong> {assignment.availableDate} |{" "}
+                          <strong>Due</strong> {assignment.dueDate} | {assignment.points} pts
                         </div>
                       </div>
                     </div>
