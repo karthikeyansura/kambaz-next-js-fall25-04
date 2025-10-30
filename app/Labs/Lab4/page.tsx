@@ -1,5 +1,6 @@
 "use client";
 
+import { Container } from "react-bootstrap";
 import ClickEvent from "./ClickEvent";
 import PassingDataOnEvent from "./PassingDataOnEvent";
 import PassingFunctions from "./PassingFunctions";
@@ -11,6 +12,9 @@ import DateStateVariable from "./DateStateVariable";
 import ObjectStateVariable from "./ObjectStateVariable";
 import ArrayStateVariable from "./ArrayStateVariable";
 import ParentStateComponent from "./ParentStateComponent";
+import ReduxExamples from "./ReduxExamples/page";
+import store from "./store";
+import { Provider } from "react-redux";
 
 export default function Lab4() {
 
@@ -19,19 +23,22 @@ export default function Lab4() {
   }
 
   return (
-    <div id="wd-lab4">
-      <h3>Lab 4</h3>
-      <ClickEvent />
-      <PassingDataOnEvent />
-      <PassingFunctions theFunction={sayHello} />
-      <EventObject />
-      <Counter />
-      <BooleanStateVariables />
-      <StringStateVariables />
-      <DateStateVariable />
-      <ObjectStateVariable />
-      <ArrayStateVariable />
-      <ParentStateComponent />      
-    </div>
+    <Provider store={store}>
+      <Container id="wd-lab4">
+        <h3>Lab 4</h3>
+        <ClickEvent />
+        <PassingDataOnEvent />
+        <PassingFunctions theFunction={sayHello} />
+        <EventObject />
+        <Counter />
+        <BooleanStateVariables />
+        <StringStateVariables />
+        <DateStateVariable />
+        <ObjectStateVariable />
+        <ArrayStateVariable />
+        <ParentStateComponent />
+        <ReduxExamples />
+      </Container>
+    </Provider>
   );
 }
