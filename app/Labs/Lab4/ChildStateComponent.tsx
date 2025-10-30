@@ -1,17 +1,28 @@
-"use client"
 export default function ChildStateComponent({
- counter,
- setCounter
-} : {
- counter: number;
- setCounter: (counter: number) => void;
+  counter,
+  setCounter,
+}: {
+  counter: number;
+  setCounter: (counter: number) => void;
 }) {
-  return (
-    <div id="wd-child-state">
-      <h3>Counter {counter}</h3>
-      <button className="btn btn-primary me-2" onClick={() => setCounter(counter + 1)} id="wd-increment-child-state-click">
-        Increment</button>
-      <button className="btn btn-danger" onClick={() => setCounter(counter - 1)} id="wd-decrement-child-state-click">
-        Decrement</button>
-    </div>
-);}
+  return (
+    <div id="wd-child-state">
+      <h3>Counter {counter}</h3>
+      <button
+        onClick={() => setCounter(counter + 1)}
+        id="wd-increment-child-state-click"
+        className="btn btn-primary"
+      >
+        Increment
+      </button>
+      &nbsp;
+      <button
+        onClick={() => setCounter(counter - 1)}
+        id="wd-decrement-child-state-click"
+        className="btn btn-primary"
+      >
+        Decrement
+      </button>
+    </div>
+  );
+}
