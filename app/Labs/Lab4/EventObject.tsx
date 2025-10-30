@@ -1,6 +1,4 @@
-"use client"
 import { useState } from "react";
-
 export default function EventObject() {
   const [event, setEvent] = useState(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -12,12 +10,15 @@ export default function EventObject() {
   return (
     <div>
       <h2>Event Object</h2>
-      <button onClick={(e) => handleClick(e)}
+      <button
+        onClick={(e) => handleClick(e)}
         className="btn btn-primary"
-        id="wd-display-event-obj-click">
+        id="wd-display-event-obj-click"
+      >
         Display Event Object
       </button>
       <pre>{JSON.stringify(event, null, 2)}</pre>
-      <hr/>
+      <hr />
     </div>
-);}
+  );
+}
