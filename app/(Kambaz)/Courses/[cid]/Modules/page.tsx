@@ -8,15 +8,33 @@ import LessonControlButtons from "./LessonControlButtons";
 import ModuleControlButtons from "./ModuleControlButtons";
 import * as db from "../../../Database";
 import { useParams } from "next/navigation";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Modules() {
   const { cid } = useParams();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [modules, setModules] = useState<any[]>(db.modules);
+  const [moduleName, setModuleName] = useState("");
+
+  const addModule = () => {
+    setModules([
+      ...modules,
+      { _id: uuidv4(), name: moduleName, course: cid, lessons: [] },
+    ]);
+    setModuleName("");
+  };
+
+  const deleteModule = (moduleId: string) => {
+    setModules(modules.filter((m) => m._id !== moduleId));
+  };
 
   return (
     <Container>
-      <ModulesControls />
+      <ModulesControls
+        setModuleName={setModuleName}
+        moduleName={moduleName}
+        addModule={addModule}
+      />
       <br />
       <br />
       <br />
@@ -31,7 +49,10 @@ export default function Modules() {
             >
               <div className="wd-title p-3 ps-2 bg-secondary">
                 <BsGripVertical className="me-2 fs-3" /> {module.name}{" "}
-                <ModuleControlButtons />
+                <ModuleControlButtons
+                  moduleId={module._id}
+                  deleteModule={deleteModule}
+                />
               </div>
               {module.lessons && (
                 <ListGroup className="wd-lessons rounded-0">
