@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Container, ListGroup } from "react-bootstrap";
 import ModulesControls from "./ModulesControls";
 import { BsGripVertical } from "react-icons/bs";
@@ -10,7 +11,9 @@ import { useParams } from "next/navigation";
 
 export default function Modules() {
   const { cid } = useParams();
-  const modules = db.modules;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [modules, setModules] = useState<any[]>(db.modules);
+
   return (
     <Container>
       <ModulesControls />
@@ -32,7 +35,8 @@ export default function Modules() {
               </div>
               {module.lessons && (
                 <ListGroup className="wd-lessons rounded-0">
-                  {module.lessons.map((lesson) => (
+                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                  {module.lessons.map((lesson: any) => (
                     <ListGroup.Item
                       key={lesson._id}
                       className="wd-lesson p-3 ps-1"
