@@ -11,7 +11,7 @@ import { useParams } from "next/navigation";
 
 export default function Modules() {
   const { cid } = useParams();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   const [modules, setModules] = useState<any[]>(db.modules);
 
   return (
