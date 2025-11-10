@@ -2,8 +2,8 @@
 import { ReactNode } from "react";
 import KambazNavigation from "./Navigation";
 import "./styles.css";
-import store from "./store";
 import { Provider } from "react-redux";
+import store from "./store";
 
 export default function KambazLayout({
   children,
@@ -14,9 +14,7 @@ export default function KambazLayout({
         <div>
           <KambazNavigation />
         </div>
-        <div className="flex-fill ps-3 wd-main-content-offset p-3">
-          {children}
-        </div>
+        <div className="wd-main-content-offset p-3 flex-fill">{children}</div>
       </div>
     </Provider>
   );
