@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import {
   Button,
   Dropdown,
@@ -10,6 +8,7 @@ import {
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
 import { IoBanOutline } from "react-icons/io5";
+import { useState } from "react";
 import ModuleEditor from "./ModuleEditor";
 
 export default function ModulesControls({
@@ -42,6 +41,9 @@ export default function ModulesControls({
           <GreenCheckmark /> Publish All
         </DropdownToggle>
         <DropdownMenu>
+          <DropdownItem id="wd-publish-all">
+            <GreenCheckmark /> Publish All
+          </DropdownItem>
           <DropdownItem id="wd-publish-all-modules-and-items">
             <GreenCheckmark /> Publish all modules and items
           </DropdownItem>
