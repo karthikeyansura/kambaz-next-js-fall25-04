@@ -1,38 +1,38 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { ReactNode, useState } from "react";
 import CourseNavigation from "./Navigation";
 import { useSelector } from "react-redux";
 import { useParams } from "next/navigation";
-import { RootState } from "../../store";
 import { FaAlignJustify } from "react-icons/fa6";
+import Breadcrumb from "./Breadcrumb";
 
 export default function CoursesLayout({ children }: { children: ReactNode }) {
   const { cid } = useParams();
-  const { courses } = useSelector((state: RootState) => state.coursesReducer);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { courses } = useSelector((state: any) => state.coursesReducer);
   const course = courses.find((course: any) => course._id === cid);
-  const [isNavVisible, setIsNavVisible] = useState(true);
 
+  const [showSidebar, setShowSidebar] = useState(true);
   return (
     <div id="wd-courses">
-      <h2 className="text-danger">
+      <h2>
         <FaAlignJustify
           className="me-4 fs-4 mb-1"
-          onClick={() => setIsNavVisible(!isNavVisible)}
-          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setShowSidebar(!showSidebar);
+          }}
+          style={{ color: "red" }}
         />
-        {course?.name}
+        <Breadcrumb course={course} />
       </h2>
       <hr />
       <div className="d-flex">
-        {isNavVisible && (
-          <div style={{ width: 170 }}>
+        {showSidebar && (
+          <div>
             <CourseNavigation />
           </div>
         )}
-        <div className="flex-fill" style={{ width: "100%" }}>
-          {children}
-        </div>
+        <div className="flex-fill">{children}</div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 export default function CourseNavigation() {
   const path = usePathname();
   const cid = path.split("/")[2];
@@ -14,7 +15,7 @@ export default function CourseNavigation() {
     "Grades",
     "People",
   ];
-  
+
   return (
     <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
       {links.map((link) => (
