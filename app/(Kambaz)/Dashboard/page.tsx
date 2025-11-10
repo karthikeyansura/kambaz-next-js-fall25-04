@@ -72,17 +72,15 @@ export default function Dashboard() {
                       {course.description}
                     </Card.Text>
                     <Button variant="primary"> Go </Button>
+                    <Button onClick={(event) => {
+                              event.preventDefault();
+                              deleteCourse(course._id);
+                            }} className="btn btn-danger float-end"
+                            id="wd-delete-course-click">
+                      Delete
+                    </Button>
                   </Card.Body>
                 </Link>
-                <Card.Footer>
-                  <Button onClick={(event) => {
-                            event.preventDefault();
-                            deleteCourse(course._id);
-                          }} className="btn btn-danger float-end"
-                          id="wd-delete-course-click">
-                    Delete
-                  </Button>
-                </Card.Footer>
               </Card>
             </Col>
           ))}
