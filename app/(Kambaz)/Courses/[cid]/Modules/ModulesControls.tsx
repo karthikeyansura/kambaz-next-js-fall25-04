@@ -8,8 +8,22 @@ import {
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
 import { IoBanOutline } from "react-icons/io5";
+import { useState } from "react";
+import ModuleEditor from "./ModuleEditor";
 
-export default function ModulesControls() {
+export default function ModulesControls({
+  moduleName,
+  setModuleName,
+  addModule,
+}: {
+  moduleName: string;
+  setModuleName: (title: string) => void;
+  addModule: () => void;
+}) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div id="wd-modules-controls" className="text-nowrap">
       <Button
@@ -17,6 +31,7 @@ export default function ModulesControls() {
         size="lg"
         className="me-1 float-end"
         id="wd-add-module-btn"
+        onClick={handleShow}
       >
         <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
         Module
@@ -26,6 +41,9 @@ export default function ModulesControls() {
           <GreenCheckmark /> Publish All
         </DropdownToggle>
         <DropdownMenu>
+          <DropdownItem id="wd-publish-all">
+            <GreenCheckmark /> Publish All
+          </DropdownItem>
           <DropdownItem id="wd-publish-all-modules-and-items">
             <GreenCheckmark /> Publish all modules and items
           </DropdownItem>
@@ -56,6 +74,14 @@ export default function ModulesControls() {
       >
         Collapse All
       </Button>
+      <ModuleEditor
+        show={show}
+        handleClose={handleClose}
+        dialogTitle="Add Module"
+        moduleName={moduleName}
+        setModuleName={setModuleName}
+        addModule={addModule}
+      />
     </div>
   );
 }

@@ -1,242 +1,263 @@
 [
-  {
-    "_id": "A101",
-    "title": "Propulsion Assignment",
-    "course": "RS101",
-    "description": "Study the principles of rocket propulsion and analyze different engine types.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A102",
-    "title": "Combustion Analysis",
-    "course": "RS101",
-    "description": "Analyze combustion efficiency and fuel types for rocket engines.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A103",
-    "title": "Nozzle Design Project",
-    "course": "RS101",
-    "description": "Design and optimize a rocket nozzle for maximum efficiency.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A201",
-    "title": "Aerodynamics Quiz",
-    "course": "RS102",
-    "description": "Test your knowledge of aerodynamic principles and fluid dynamics.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A202",
-    "title": "Flow Analysis",
-    "course": "RS102",
-    "description": "Analyze subsonic and supersonic flow patterns over airfoils.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A203",
-    "title": "Heating Analysis",
-    "course": "RS102",
-    "description": "Study aerodynamic heating effects during atmospheric re-entry.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A301",
-    "title": "Structural Design Task",
-    "course": "RS103",
-    "description": "Design a spacecraft structure that can withstand launch loads.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A302",
-    "title": "Orbital Calculations",
-    "course": "RS103",
-    "description": "Calculate orbital parameters for a satellite mission.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A303",
-    "title": "Systems Engineering Exam",
-    "course": "RS103",
-    "description": "Comprehensive exam covering spacecraft systems and subsystems.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A401",
-    "title": "Organic Compounds Nomenclature",
-    "course": "RS104",
-    "description": "Practice naming organic compounds using IUPAC nomenclature.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A402",
-    "title": "Reaction Mechanisms Study",
-    "course": "RS104",
-    "description": "Analyze reaction mechanisms for common organic transformations.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A403",
-    "title": "Spectroscopy Analysis Project",
-    "course": "RS104",
-    "description": "Use NMR and IR spectroscopy to determine unknown compound structures.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A501",
-    "title": "Coordination Chemistry Lab",
-    "course": "RS105",
-    "description": "Synthesize and characterize transition metal complexes.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A502",
-    "title": "Main Group Elements Quiz",
-    "course": "RS105",
-    "description": "Test your knowledge of main group element chemistry and trends.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A503",
-    "title": "Crystal Structures Report",
-    "course": "RS105",
-    "description": "Analyze and report on crystal structures of inorganic materials.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A601",
-    "title": "Thermodynamics Problem Set",
-    "course": "RS106",
-    "description": "Solve problems involving enthalpy, entropy, and Gibbs free energy.",
-    "points": 90,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A602",
-    "title": "Kinetics Experiment",
-    "course": "RS106",
-    "description": "Determine reaction rates and rate laws through experimentation.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A603",
-    "title": "Quantum Chemistry Exam",
-    "course": "RS106",
-    "description": "Comprehensive exam on quantum mechanics and molecular orbital theory.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A701",
-    "title": "Elvish Translation Exercise",
-    "course": "RS107",
-    "description": "Translate texts between Sindarin, Quenya, and Common Speech.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A702",
-    "title": "Dwarvish Runes Assignment",
-    "course": "RS107",
-    "description": "Learn to read and write Cirth runes and Khuzdul script.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A703",
-    "title": "Ancient Scripts Research Paper",
-    "course": "RS107",
-    "description": "Research paper on the evolution of languages in Middle-earth.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  },
-  {
-    "_id": "A801",
-    "title": "Historical Alliances Essay",
-    "course": "RS108",
-    "description": "Write an essay analyzing major alliances in Middle-earth history.",
-    "points": 100,
-    "dueDate": "2024-05-13T23:59:00",
-    "availableDate": "2024-05-06T00:00:00",
-    "untilDate": "2024-05-20T23:59:00"
-  },
-  {
-    "_id": "A802",
-    "title": "Council of Elrond Analysis",
-    "course": "RS108",
-    "description": "Analyze the diplomatic strategies used at the Council of Elrond.",
-    "points": 100,
-    "dueDate": "2024-05-20T23:59:00",
-    "availableDate": "2024-05-13T00:00:00",
-    "untilDate": "2024-05-27T23:59:00"
-  },
-  {
-    "_id": "A803",
-    "title": "Diplomatic Strategy Presentation",
-    "course": "RS108",
-    "description": "Present strategies for maintaining peace among Middle-earth races.",
-    "points": 100,
-    "dueDate": "2024-05-27T23:59:00",
-    "availableDate": "2024-05-20T00:00:00",
-    "untilDate": "2024-06-03T23:59:00"
-  }
+    {
+        "_id": "A101",
+        "title": "Propulsion Assignment",
+        "course": "RS101",
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment covers the basics of rocket propulsion, including thrust calculations and fuel efficiency."
+    },
+    {
+        "_id": "A102",
+        "title": "Combustion Analysis",
+        "course": "RS101",
+        "availableDate": "2023-10-14",
+        "dueDate": "2023-10-28",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the analysis of combustion processes, including chemical reactions and energy release."
+    },
+    {
+        "_id": "A103",
+        "title": "Nozzle Design Project",
+        "course": "RS101",
+        "availableDate": "2023-10-15",
+        "dueDate": "2023-10-29",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the design of rocket nozzles, including flow dynamics and performance optimization."
+    },
+    {
+        "_id": "A201",
+        "title": "Aerodynamics Quiz",
+        "course": "RS102",
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This quiz tests your knowledge of aerodynamic principles and applications."
+    },
+    {
+        "_id": "A202",
+        "title": "Flow Analysis",
+        "course": "RS102",
+        "availableDate": "2023-10-14",
+        "dueDate": "2023-10-28",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "description": "This assignment focuses on the analysis of fluid flow, including velocity profiles and pressure distributions."
+    },
+    {
+        "_id": "A203",
+        "title": "Heating Analysis",
+        "course": "RS102",
+        "availableDate": "2023-10-15",
+        "dueDate": "2023-10-29",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the analysis of heating effects in aerospace applications, including thermal protection systems."
+    },
+    {
+        "_id": "A301",
+        "title": "Structural Design Task",
+        "course": "RS103",
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "description": "This assignment involves the design of aerospace structures, including load analysis and material selection."
+    },
+    {
+        "_id": "A302",
+        "title": "Orbital Calculations",
+        "course": "RS103",
+        "availableDate": "2023-10-14",
+        "dueDate": "2023-10-28",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "description": "This assignment focuses on orbital mechanics, including trajectory analysis and mission planning."
+    },
+    {
+        "_id": "A303",
+        "title": "Systems Engineering Exam",
+        "course": "RS103",
+        "availableDate": "2023-10-15",
+        "dueDate": "2023-10-29",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This exam tests your knowledge of systems engineering principles and practices in aerospace applications ."
+    },
+    {
+        "_id": "A401",
+        "title": "Organic Synthesis Assignment",
+        "course": "RS104",
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the synthesis of organic compounds, including reaction mechanisms and laboratory techniques."
+    },
+    {
+        "_id": "A402",
+        "title": "Spectroscopy Analysis",
+        "course": "RS104",
+        "availableDate": "2023-10-14",
+        "dueDate": "2023-10-28",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment involves the analysis of organic compounds using spectroscopic methods, including NMR and IR spectroscopy."
+    },
+    {
+        "_id": "A403",
+        "title": "Reaction Mechanisms Quiz",
+        "course": "RS104",
+        "availableDate": "2023-10-15",
+        "dueDate": "2023-10-29",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This quiz tests your knowledge of organic reaction mechanisms and their applications."
+    },
+    {
+        "_id": "A501",
+        "title": "Inorganic Chemistry Assignment",
+        "course": "RS105",
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the properties and reactions of inorganic compounds, including coordination chemistry and bonding theories."
+    },
+    {
+        "_id": "A502",
+        "title": "Crystal Field Theory Quiz",
+        "course": "RS105",
+        "availableDate": "2023-10-14",
+        "dueDate": "2023-10-28",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This quiz tests your knowledge of crystal field theory and its applications in inorganic chemistry."
+    },
+    {
+        "_id": "A503",
+        "title": "Synthesis Lab Report",
+        "course": "RS105",
+        "availableDate": "2023-10-15",
+        "dueDate": "2023-10-29",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This lab report involves the synthesis and analysis of inorganic compounds, including experimental techniques and data interpretation."
+    },
+    {
+        "_id": "A601",
+        "title": "Thermodynamics Assignment",
+        "course": "RS106",
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the principles of thermodynamics, including energy transfer and chemical equilibria."
+    },
+    {
+        "_id": "A602",
+        "title": "Kinetics Quiz",
+        "course": "RS106",
+        "availableDate": "2023-10-14",
+        "dueDate": "2023-10-28",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This quiz tests your knowledge of chemical kinetics and reaction rate theories."
+    },
+    {
+        "_id": "A603",
+        "title": "Spectroscopy Lab Report",
+        "course": "RS106",
+        "availableDate": "2023-10-15",
+        "dueDate": "2023-10-29",
+        "availableUntil": "2023-10-31",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This lab report involves the use of spectroscopic techniques to analyze chemical compounds, including data collection and interpretation."
+    },
+    {
+        "_id": "A701",
+        "title": "Basic Lithography Assignment",
+        "course": "RS107",
+        "availableDate": "2023-11-01",
+        "dueDate": "2023-11-15",
+        "availableUntil": "2023-11-30",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment introduces the principles of lithography, including the creation and analysis of lithographic prints."
+    },
+    {
+        "_id": "A702",
+        "title": "Etching Techniques Quiz",
+        "course": "RS107",
+        "availableDate": "2023-11-14",
+        "dueDate": "2023-11-28",
+        "availableUntil": "2023-11-30",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This quiz tests your knowledge of various etching techniques used in lithography, including chemical and physical methods."
+    },
+    {
+        "_id": "A703",
+        "title": "Advanced Lithography Project",
+        "course": "RS107",
+        "availableDate": "2023-11-15",
+        "dueDate": "2023-11-29",
+        "availableUntil": "2023-11-30",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This project involves the application of advanced lithographic techniques to create complex prints, including design and execution."
+    },
+    {
+        "_id": "A801",
+        "title": "Genetics Assignment",
+        "course": "RS108",
+        "availableDate": "2023-11-01",
+        "dueDate": "2023-11-15",
+        "availableUntil": "2023-11-30",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This assignment focuses on the principles of genetics, including inheritance patterns and molecular genetics."
+    },
+    {
+        "_id": "A802",
+        "title": "Evolution Quiz",
+        "course": "RS108",
+        "availableDate": "2023-11-14",
+        "dueDate": "2023-11-28",
+        "availableUntil": "2023-11-30",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This quiz tests your knowledge of evolutionary biology, including natural selection and speciation."
+    },
+    {
+        "_id": "A803",
+        "title": "Ecology Lab Report",
+        "course": "RS108",
+        "availableDate": "2023-11-15",
+        "dueDate": "2023-11-29",
+        "availableUntil": "2023-11-30",
+        "points": 100,
+        "modules": ["M1", "M2"],
+        "description": "This lab report involves the study of ecological systems, including data collection and analysis of environmental interactions."
+    }
 ]

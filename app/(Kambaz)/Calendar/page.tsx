@@ -1,7 +1,7 @@
 export default function Lab2() {
   return (
-    <div>
-      <h2>Calendar</h2>
+    <div id="wd-calendar-page">
+      <h1>Calendar</h1>
     </div>
   );
 }
