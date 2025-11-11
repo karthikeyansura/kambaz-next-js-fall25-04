@@ -26,7 +26,7 @@ export default function AssignmentDeleter({
           Cancel
         </Button>
         <Button
-          variant="primary"
+          variant="danger"
           onClick={() => {
             deleteAssignment();
             handleClose();
