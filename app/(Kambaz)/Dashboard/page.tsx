@@ -72,7 +72,7 @@ export default function Dashboard() {
                   number: "New Number",
                   startDate: "2023-09-10",
                   endDate: "2023-12-15",
-                  image: "/images/reactjs.png",
+                  image: "/images/reactjs.jpg",
                   description: "New Description",
                 });
               }}
