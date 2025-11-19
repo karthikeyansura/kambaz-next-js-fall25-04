@@ -15,6 +15,7 @@ export default function TOC() {
           Labs
         </NavLink>
       </NavItem>
+
       <NavItem>
         <NavLink
           href="/Labs/Lab1"
@@ -24,6 +25,7 @@ export default function TOC() {
           Lab 1
         </NavLink>
       </NavItem>
+
       <NavItem>
         <NavLink
           href="/Labs/Lab2"
@@ -33,6 +35,7 @@ export default function TOC() {
           Lab 2
         </NavLink>
       </NavItem>
+
       <NavItem>
         <NavLink
           href="/Labs/Lab3"
@@ -42,11 +45,7 @@ export default function TOC() {
           Lab 3
         </NavLink>
       </NavItem>
-      <NavItem>
-        <NavLink href="/" as={Link}>
-          Kambaz
-        </NavLink>
-      </NavItem>
+
       <NavItem>
         <NavLink
           href="/Labs/Lab4"
@@ -55,9 +54,22 @@ export default function TOC() {
         >
           Lab 4
         </NavLink>
-      </NavItem>      
+      </NavItem>  
+
       <NavItem>
-        <NavLink id="wd-github" href="https://github.com/karthikeyansura">My GitHub</NavLink>
+        <Nav.Link
+          href="/Labs/Lab5"
+          as={Link}
+          className={`nav-link ${pathname.endsWith("Lab5") ? "active" : ""}`}
+        >
+          Lab 5
+        </Nav.Link>
+      </NavItem>  
+
+      <NavItem>
+        <Nav.Link href="/" as={Link}>
+          Kambaz
+        </Nav.Link>
       </NavItem>
     </Nav>
   );

@@ -1,5 +1,5 @@
 {
-  "name": "kambaz",
+  "name": "kambaz-next-js-fall25-04",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.2",
+    "axios": "^1.13.2",
     "bootstrap": "^5.3.8",
     "next": "15.5.3",
     "react": "19.1.0",

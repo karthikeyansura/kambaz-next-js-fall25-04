@@ -5,15 +5,18 @@ import AssignmentsControls from "./AssignmentsControls";
 import { Badge, Container, ListGroup } from "react-bootstrap";
 import { BsGripVertical } from "react-icons/bs";
 import AssignmentControlButtons from "./AssignmentControlButtons";
+import IndvAssignmentControlButtons from "./IndvAssignmentControlButtons";
 import { MdAssignment } from "react-icons/md";
 import { useParams } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa6";
-import { deleteAssignment } from "./reducer";
-import { useState } from "react";
+import { deleteAssignment, setAssignments } from "./reducer";
+import { useEffect, useState } from "react";
 import AssignmentDeleter from "./AssignmentDeleter";
+import * as client from "../../client";
+import { on } from "events";
 const formatDateToMonthDayYear = (dateString: string) => {
-  const date = new Date(dateString);
+  const date = new Date(dateString); // Create a Date object from your date string
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -28,6 +31,19 @@ export default function Assignments() {
     (state: any) => state.assignmentsReducer
   );
   const dispatch = useDispatch();
+  const fetchAssignments = async () => {
+    const assignments = await client.findAssignmentsForCourse(cid as string);
+    dispatch(setAssignments(assignments));
+  };
+  useEffect(() => {
+    fetchAssignments();
+  }, []);
+
+  const onRemoveAssignment = async (assignmentId: string) => {
+    await client.deleteAssignment(assignmentId);
+    dispatch(deleteAssignment({ _id: assignmentId }));
+  };
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -116,12 +132,7 @@ export default function Assignments() {
             (a: any) => a._id === aid
           )?.title || ""
         }
-        deleteAssignment={() =>
-          dispatch(
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            deleteAssignment(assignments.find((a: any) => a._id === aid))
-          )
-        }
+        deleteAssignment={() => onRemoveAssignment(aid)}
       />
     </Container>
   );
