@@ -6,6 +6,7 @@ import PeopleTable from "../../Courses/[cid]/People/Table/page";
 import PeopleDetails from "../../Courses/[cid]/People/Details";
 import * as client from "../client";
 import { FormSelect, FormControl } from "react-bootstrap";
+import { FaPlus } from "react-icons/fa";
 
 export default function Users() {
   const [users, setUsers] = useState<any[]>([]);
@@ -38,6 +39,19 @@ export default function Users() {
     }
   };
 
+  const createUser = async () => {
+    const user = await client.createUser({
+      firstName: "New",
+      lastName: `User${users.length + 1}`,
+      username: `newuser${Date.now()}`,
+      password: "password123",
+      email: `User${users.length + 1}@email.com`,
+      section: "S101",
+      role: "STUDENT",
+    });
+    setUsers([...users, user]);
+  };
+
   useEffect(() => {
     fetchUsers();
   }, [uid]);
@@ -45,6 +59,13 @@ export default function Users() {
   return (
     <div className="ms-4">
       <h3>Users</h3>
+      <button
+        onClick={createUser}
+        className="float-end btn btn-danger wd-add-people"
+      >
+        <FaPlus className="me-2" />
+        Users
+      </button>
       <PeopleDetails />
       <div className="d-flex gap-2 mb-3">
         <FormControl

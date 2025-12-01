@@ -1,20 +1,42 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaCheck, FaUserCircle } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaPencil } from "react-icons/fa6";
 import { useParams, useRouter } from "next/navigation";
 import * as client from "@/app/(Kambaz)/Account/client";
+import { FormControl, FormSelect } from "react-bootstrap";
 
 export default function PeopleDetails() {
   const { uid } = useParams();
   const router = useRouter();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+  const [editing, setEditing] = useState(false);
 
   const fetchUser = async () => {
     if (!uid) return;
     const user = await client.findUserById(uid as string);
     setUser(user);
+    setName(`${user.firstName} ${user.lastName}`);
+    setEmail(user.email);
+    setRole(user.role);
+  };
+
+  const deleteUser = async (uid: string) => {
+    await client.deleteUser(uid);
+    router.push("/Account/Users");
+  };
+
+  const saveUser = async () => {
+    const [firstName, lastName] = name.split(" ");
+    const updatedUser = { ...user, firstName, lastName, email, role };
+    await client.updateUser(updatedUser);
+    setUser(updatedUser);
+    setEditing(false);
   };
 
   useEffect(() => {
@@ -35,13 +57,84 @@ export default function PeopleDetails() {
         <FaUserCircle className="text-secondary me-2 fs-1" />
       </div>
       <hr />
-      <div className="text-danger fs-4 wd-name">
-        {user.firstName} {user.lastName}
+      <div className="text-danger fs-4">
+        {!editing && (
+          <FaPencil
+            onClick={() => setEditing(true)}
+            className="float-end fs-5 mt-2 wd-edit"
+          />
+        )}
+        {editing && (
+          <FaCheck
+            onClick={() => saveUser()}
+            className="float-end fs-5 mt-2 me-2 wd-save"
+          />
+        )}
+        {!editing && (
+          <div className="wd-name" onClick={() => setEditing(true)}>
+            {user.firstName} {user.lastName}
+          </div>
+        )}
+        {user && editing && (
+          <FormControl
+            className="w-50 wd-edit-name mb-2"
+            defaultValue={`${user.firstName} ${user.lastName}`}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                saveUser();
+              }
+            }}
+          />
+        )}
       </div>
-      <b>Roles:</b> <span className="wd-roles"> {user.role} </span> <br />
+
+      <b>Roles:</b> 
+      {editing ? (
+        <FormSelect
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          className="w-100 wd-edit-role mb-2"
+        >
+          <option value="STUDENT">Student</option>
+          <option value="TA">Assistant</option>
+          <option value="FACULTY">Faculty</option>
+          <option value="ADMIN">Admin</option>
+        </FormSelect>
+      ) : (
+        <span className="wd-roles"> {user.role} </span>
+      )}
+      {!editing && <br />}
+
       <b>Login ID:</b> <span className="wd-login-id"> {user.loginId} </span> <br />
       <b>Section:</b> <span className="wd-section"> {user.section} </span> <br />
-      <b>Total Activity:</b> <span className="wd-total-activity">{user.totalActivity}</span>
+      <b>Total Activity:</b> <span className="wd-total-activity">{user.totalActivity}</span> <br />
+
+      <b>Email:</b>
+      {editing ? (
+        <FormControl
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-100 wd-edit-email"
+        />
+      ) : (
+        <span className="wd-email"> {user.email} </span>
+      )}
+      
+      <hr />
+      <button
+        onClick={() => deleteUser(uid as string)}
+        className="btn btn-danger float-end wd-delete"
+      >
+        Delete
+      </button>
+      <button
+        onClick={() => router.push("/Account/Users")}
+        className="btn btn-secondary float-start float-end me-2 wd-cancel"
+      >
+        Cancel
+      </button>
     </div>
   );
 }

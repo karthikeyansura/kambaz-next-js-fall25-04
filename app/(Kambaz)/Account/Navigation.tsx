@@ -17,7 +17,7 @@ export default function AccountNavigation() {
           <NavLink
             as={Link}
             href={`/Account/${link}`}
-            className={pathname.includes(link) ? "bg-danger text-white" : "text-danger"}
+            className={pathname.includes(link) ? "active" : ""}
           >
             {link}
           </NavLink>
@@ -28,7 +28,7 @@ export default function AccountNavigation() {
           <NavLink
             as={Link}
             href="/Account/Users"
-            className={pathname.includes("Users") ? "bg-danger text-white" : "text-danger"}
+            className={pathname.includes("Users") ? "active" : ""}
           >
             Users
           </NavLink>
