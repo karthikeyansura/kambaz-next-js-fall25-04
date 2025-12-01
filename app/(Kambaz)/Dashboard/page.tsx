@@ -73,6 +73,7 @@ export default function Dashboard() {
 
   const studentView = currentUser.role === "STUDENT";
   const facultyView = currentUser.role === "FACULTY";
+  const adminView = currentUser.role === "ADMIN";
 
   const addNewCourse = async () => {
     const newCourse = await userClient.createCourseForUser(course);
@@ -118,15 +119,17 @@ export default function Dashboard() {
     <Container id="wd-dashboard">
       <h1 id="wd-dashboard-title">
         Dashboard
-        <button
-          onClick={() => setEnrolling(!enrolling)}
-          className="float-end btn btn-primary"
-        >
-          {enrolling ? "My Courses" : "All Courses"}
-        </button>
+        {!adminView && (
+          <button
+            onClick={() => setEnrolling(!enrolling)}
+            className="float-end btn btn-primary"
+          >
+            {enrolling ? "My Courses" : "All Courses"}
+          </button>
+        )}
       </h1>
       <hr />
-      {!studentView && (
+      {(facultyView || adminView) && (
         <>
           <h5>
             New Course
@@ -194,7 +197,7 @@ export default function Dashboard() {
                   />
                   <CardBody className="card-body">
                     <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
-                      {enrolling && (
+                      {enrolling && !adminView && (
                         <button
                           onClick={(event) => {
                             event.preventDefault();
@@ -216,7 +219,7 @@ export default function Dashboard() {
                       {course.description}
                     </CardText>
                     {!enrolling && <Button variant="primary">Go</Button>}
-                    {facultyView && !enrolling && (
+                    {(facultyView || adminView) && !enrolling && (
                       <>
                         <button
                           onClick={(event) => {
