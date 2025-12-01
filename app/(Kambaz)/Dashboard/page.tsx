@@ -196,7 +196,7 @@ export default function Dashboard() {
                     height={160}
                   />
                   <CardBody className="card-body">
-                    <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    <CardTitle className={`wd-dashboard-course-title overflow-hidden ${!enrolling ? "text-nowrap" : ""}`} style={{ height: enrolling ? "50px" : "auto" }}>
                       {enrolling && !adminView && (
                         <button
                           onClick={(event) => {
