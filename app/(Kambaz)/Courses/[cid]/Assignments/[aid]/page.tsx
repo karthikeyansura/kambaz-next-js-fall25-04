@@ -1,6 +1,6 @@
 "use client";
 
-import { redirect, useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   Button,
   Col,
@@ -13,51 +13,78 @@ import {
 } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addAssignment, updateAssignment } from "../reducer";
-import { useState } from "react";
+import { addAssignment, updateAssignment, setAssignments } from "../reducer";
+import { useState, useEffect } from "react";
 import * as client from "../../../client";
+
 export default function AssignmentEditor() {
   const { cid, aid } = useParams();
+  const router = useRouter();
   const dispatch = useDispatch();
   const { assignments } = useSelector(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: any) => state.assignmentsReducer
   );
 
-  const onCreateAssignmentForCourse = async () => {
-    await client.createAssignmentForCourse(cid as string, assignmentState);
-    dispatch(addAssignment(assignmentState));
-    redirect(`/Courses/${cid}/Assignments/`);
-  };
-
-  const onUpdateAssignment = async () => {
-    await client.updateAssignment(assignmentState);
-    dispatch(updateAssignment(assignmentState));
-    redirect(`/Courses/${cid}/Assignments/`);
-  };
+  useEffect(() => {
+    const fetchAssignments = async () => {
+      if (assignments.length === 0 && cid) {
+        const fetchedAssignments = await client.findAssignmentsForCourse(cid as string);
+        dispatch(setAssignments(fetchedAssignments));
+      }
+    };
+    fetchAssignments();
+  }, [cid, assignments.length, dispatch]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const assignment = assignments.find((a: any) => a._id === aid);
-  const editMode = assignment ? true : false;
+  const isNewAssignment = aid === "new" || !assignment;
 
   const { currentUser } = useSelector(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: any) => state.accountReducer
   );
-  const viewMode = currentUser.role === "STUDENT" ? true : false;
+  const viewMode = currentUser?.role === "STUDENT";
 
   const [assignmentState, setAssignmentState] = useState(
     assignment || {
-      _id: aid,
+      title: "New Assignment",
+      description: "New Assignment Description",
+      points: 100,
       course: cid,
+      availableDate: new Date().toISOString().split("T")[0],
+      dueDate: new Date().toISOString().split("T")[0],
+      availableUntil: new Date().toISOString().split("T")[0],
     }
   );
+
+  useEffect(() => {
+    if (assignment) {
+      setAssignmentState(assignment);
+    }
+  }, [assignment]);
+
+  const onCreateAssignmentForCourse = async () => {
+    const newAssignment = await client.createAssignmentForCourse(
+      cid as string,
+      assignmentState
+    );
+    dispatch(addAssignment(newAssignment));
+    router.push(`/Courses/${cid}/Assignments`);
+  };
+
+  const onUpdateAssignment = async () => {
+    await client.updateAssignment(assignmentState);
+    dispatch(updateAssignment(assignmentState));
+    router.push(`/Courses/${cid}/Assignments`);
+  };
+
   return (
     <Container id="wd-assignments-editor">
       <FormLabel htmlFor="wd-name">Assignment Name</FormLabel>
       <FormControl
         id="wd-name"
-        defaultValue={assignment?.title}
+        value={assignmentState.title || ""}
         className="mb-3"
         onChange={(e) =>
           setAssignmentState({ ...assignmentState, title: e.target.value })
@@ -69,7 +96,7 @@ export default function AssignmentEditor() {
         id="wd-description"
         rows={5}
         className="mb-3"
-        defaultValue={assignment?.description}
+        value={assignmentState.description || ""}
         onChange={(e) =>
           setAssignmentState({
             ...assignmentState,
@@ -85,7 +112,7 @@ export default function AssignmentEditor() {
         <Col sm={10}>
           <FormControl
             id="wd-points"
-            defaultValue={assignment?.points}
+            value={assignmentState.points || 100}
             type="number"
             onChange={(e) =>
               setAssignmentState({
@@ -176,6 +203,7 @@ export default function AssignmentEditor() {
           </Row>
         </>
       )}
+
       <Row className="mb-3">
         <FormLabel column sm={2} className="wd-assignment-details-label">
           Assign
@@ -202,7 +230,7 @@ export default function AssignmentEditor() {
             <FormControl
               type="date"
               id="wd-due-date"
-              defaultValue={assignment?.dueDate}
+              value={assignmentState.dueDate?.split("T")[0] || ""}
               className="mb-3"
               onChange={(e) =>
                 setAssignmentState({
@@ -220,7 +248,7 @@ export default function AssignmentEditor() {
                 <FormControl
                   type="date"
                   id="wd-available-from"
-                  defaultValue={assignment?.availableDate}
+                  value={assignmentState.availableDate?.split("T")[0] || ""}
                   onChange={(e) =>
                     setAssignmentState({
                       ...assignmentState,
@@ -236,7 +264,7 @@ export default function AssignmentEditor() {
                 <FormControl
                   type="date"
                   id="wd-available-until"
-                  defaultValue={assignment?.availableUntil}
+                  value={assignmentState.availableUntil?.split("T")[0] || ""}
                   onChange={(e) =>
                     setAssignmentState({
                       ...assignmentState,
@@ -258,25 +286,25 @@ export default function AssignmentEditor() {
             variant="secondary"
             className="me-2"
             id="wd-cancel-assignment"
-            onClick={() => redirect(`/Courses/${cid}/Assignments`)}
+            onClick={() => router.push(`/Courses/${cid}/Assignments`)}
           >
             Cancel
           </Button>
-          {editMode ? (
-            <Button
-              variant="danger"
-              id="wd-save-assignment"
-              onClick={onUpdateAssignment}
-            >
-              Save
-            </Button>
-          ) : (
+          {isNewAssignment ? (
             <Button
               variant="danger"
               id="wd-add-assignment"
               onClick={onCreateAssignmentForCourse}
             >
               Add
+            </Button>
+          ) : (
+            <Button
+              variant="danger"
+              id="wd-save-assignment"
+              onClick={onUpdateAssignment}
+            >
+              Save
             </Button>
           )}
         </div>

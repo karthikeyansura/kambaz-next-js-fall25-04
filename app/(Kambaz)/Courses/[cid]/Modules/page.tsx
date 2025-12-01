@@ -19,37 +19,40 @@ import {
   deleteModule,
 } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
+
 export default function Modules() {
   const { cid } = useParams();
   const [moduleName, setModuleName] = useState("");
   const { modules } = useSelector((state: any) => state.modulesReducer);
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const studentView = currentUser.role === "STUDENT";
+  const studentView = currentUser?.role === "STUDENT";
   const dispatch = useDispatch();
+
   const fetchModules = async () => {
     const modules = await client.findModulesForCourse(cid as string);
     dispatch(setModules(modules));
   };
+
   useEffect(() => {
     fetchModules();
-  }, []);
+  }, [cid]);
+
   const onCreateModuleForCourse = async () => {
     if (!cid) return;
     const newModule = { name: moduleName, course: cid };
-    // eslint-disable-next-line @next/next/no-assign-module-variable
-    const module = await client.createModuleForCourse(cid as string, newModule);
-    dispatch(setModules([...modules, module]));
+    const createdModule = await client.createModuleForCourse(cid as string, newModule);
+    dispatch(addModule(createdModule));
+    setModuleName("");
   };
+
   const onRemoveModule = async (moduleId: string) => {
     await client.deleteModule(moduleId);
-    dispatch(setModules(modules.filter((m: any) => m._id !== moduleId)));
+    dispatch(deleteModule(moduleId));
   };
-  const onUpdateModule = async (module: any) => {
-    await client.updateModule(module);
-    const newModules = modules.map((m: any) =>
-      m._id === module._id ? module : m
-    );
-    dispatch(setModules(newModules));
+
+  const onUpdateModule = async (updatedModule: any) => {
+    await client.updateModule(updatedModule);
+    dispatch(updateModule(updatedModule));
   };
 
   return (

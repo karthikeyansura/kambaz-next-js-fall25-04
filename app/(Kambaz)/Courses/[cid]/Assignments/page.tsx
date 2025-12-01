@@ -5,7 +5,6 @@ import AssignmentsControls from "./AssignmentsControls";
 import { Badge, Container, ListGroup } from "react-bootstrap";
 import { BsGripVertical } from "react-icons/bs";
 import AssignmentControlButtons from "./AssignmentControlButtons";
-import IndvAssignmentControlButtons from "./IndvAssignmentControlButtons";
 import { MdAssignment } from "react-icons/md";
 import { useParams } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,9 +13,10 @@ import { deleteAssignment, setAssignments } from "./reducer";
 import { useEffect, useState } from "react";
 import AssignmentDeleter from "./AssignmentDeleter";
 import * as client from "../../client";
-import { on } from "events";
+
 const formatDateToMonthDayYear = (dateString: string) => {
-  const date = new Date(dateString); // Create a Date object from your date string
+  if (!dateString) return "N/A";
+  const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -31,13 +31,16 @@ export default function Assignments() {
     (state: any) => state.assignmentsReducer
   );
   const dispatch = useDispatch();
+
   const fetchAssignments = async () => {
+    if (!cid) return;
     const assignments = await client.findAssignmentsForCourse(cid as string);
     dispatch(setAssignments(assignments));
   };
+
   useEffect(() => {
     fetchAssignments();
-  }, []);
+  }, [cid]);
 
   const onRemoveAssignment = async (assignmentId: string) => {
     await client.deleteAssignment(assignmentId);
@@ -53,6 +56,7 @@ export default function Assignments() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: any) => state.accountReducer
   );
+
   return (
     <Container id="wd-assignments">
       <AssignmentsControls />
@@ -74,8 +78,6 @@ export default function Assignments() {
           </div>
           <ListGroup className="wd-assignment-list rounded-0">
             {assignments
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              .filter((assignment: any) => assignment.course === cid)
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               .map((assignment: any) => (
                 <ListGroup.Item
@@ -107,9 +109,10 @@ export default function Assignments() {
                         {assignment.points} pts
                       </div>
                     </div>
-                    {currentUser.role === "FACULTY" && (
+                    {currentUser?.role === "FACULTY" && (
                       <FaTrash
                         className="text-danger me-2 float-end"
+                        style={{ cursor: "pointer" }}
                         onClick={() => {
                           setAid(assignment._id);
                           handleShow();

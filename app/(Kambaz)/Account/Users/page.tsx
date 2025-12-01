@@ -15,8 +15,12 @@ export default function Users() {
   const [name, setName] = useState("");
 
   const fetchUsers = async () => {
-    const users = await client.findAllUsers();
-    setUsers(users);
+    try {
+      const users = await client.findAllUsers();
+      setUsers(users);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
   };
 
   const filterUsersByRole = async (role: string) => {
@@ -40,16 +44,20 @@ export default function Users() {
   };
 
   const createUser = async () => {
-    const user = await client.createUser({
-      firstName: "New",
-      lastName: `User${users.length + 1}`,
-      username: `newuser${Date.now()}`,
-      password: "password123",
-      email: `User${users.length + 1}@email.com`,
-      section: "S101",
-      role: "STUDENT",
-    });
-    setUsers([...users, user]);
+    try {
+      const user = await client.createUser({
+        firstName: "New",
+        lastName: `User${users.length + 1}`,
+        username: `newuser${Date.now()}`,
+        password: "password123",
+        email: `User${users.length + 1}@email.com`,
+        section: "S101",
+        role: "STUDENT",
+      });
+      setUsers([...users, user]);
+    } catch (error) {
+      console.error("Error creating user:", error);
+    }
   };
 
   useEffect(() => {
@@ -66,7 +74,7 @@ export default function Users() {
         <FaPlus className="me-2" />
         Users
       </button>
-      <PeopleDetails />
+      {uid && <PeopleDetails />}
       <div className="d-flex gap-2 mb-3">
         <FormControl
           onChange={(e) => filterUsersByName(e.target.value)}
