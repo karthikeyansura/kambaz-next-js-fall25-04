@@ -3,19 +3,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Nav, NavItem, NavLink } from "react-bootstrap";
 import { useSelector } from "react-redux";
+
 export default function AccountNavigation() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   const links = currentUser ? ["Profile"] : ["Signin", "Signup"];
   const pathname = usePathname();
+
   return (
-    <Nav variant="pills">
+    <Nav variant="pills" className="wd-account-navigation">
       {links.map((link) => (
         <NavItem key={link}>
           <NavLink
             as={Link}
             href={`/Account/${link}`}
-            active={pathname.endsWith(link)}
+            className={pathname.includes(link) ? "bg-danger text-white" : "text-danger"}
           >
             {link}
           </NavLink>
@@ -26,7 +28,7 @@ export default function AccountNavigation() {
           <NavLink
             as={Link}
             href="/Account/Users"
-            active={pathname.endsWith("/Users")}
+            className={pathname.includes("Users") ? "bg-danger text-white" : "text-danger"}
           >
             Users
           </NavLink>
