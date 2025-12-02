@@ -54,7 +54,11 @@ export default function PeopleTable({ users: propUsers }: PeopleTableProps) {
               <tr key={user._id}>
                 <td className="wd-full-name text-nowrap">
                   <Link
-                    href={`/Account/Users/${user._id}`}
+                    href={
+                      cid
+                        ? `/Courses/${cid}/People/${user._id}`
+                        : `/Account/Users/${user._id}`
+                    }
                     className="text-decoration-none text-danger"
                   >
                     <FaUserCircle className="me-2 fs-1 text-secondary" />
